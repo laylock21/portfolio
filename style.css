@@ -2189,37 +2189,6 @@ a {
         font-size: 0.8rem;
     }
 
-
-    .experience h2 {
-        font-size: clamp(3rem, 12vw, 5rem);
-    }
-
-
-    .timeline {
-        margin-top: 3.5rem;
-    }
-
-
-    .timeline-item {
-        grid-template-columns: 1fr;
-
-        gap: 1.5rem;
-
-        padding: 2.5rem 0;
-    }
-
-
-    .timeline-item:hover {
-        padding-left: 0;
-    }
-
-        .contact {
-        grid-template-columns: 1fr;
-
-        padding: 7rem 6%;
-    }
-
-
     .contact h2 {
         font-size: clamp(3rem, 13vw, 5.5rem);
     }
