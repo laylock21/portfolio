@@ -88,3 +88,79 @@ mobileLinks.forEach((link) => {
     });
 
 });
+
+/* =========================
+   PROJECT SLIDESHOW
+========================= */
+
+const projectImages = document.querySelectorAll(".project-image");
+
+projectImages.forEach((projectImage) => {
+    const slides = projectImage.querySelectorAll(".project-screenshot");
+
+    const previousButton =
+        projectImage.querySelector(".slide-prev");
+
+    const nextButton =
+        projectImage.querySelector(".slide-next");
+
+    const currentSlideElement =
+        projectImage.querySelector(".current-slide");
+
+    const totalSlidesElement =
+        projectImage.querySelector(".total-slides");
+
+    let currentSlide = 0;
+
+
+    // Set total number of slides
+
+    totalSlidesElement.textContent =
+        String(slides.length).padStart(2, "0");
+
+
+    function showSlide(index) {
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+
+        slides[index].classList.add("active");
+
+
+        currentSlideElement.textContent =
+            String(index + 1).padStart(2, "0");
+    }
+
+
+    // NEXT
+
+    nextButton.addEventListener("click", () => {
+
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        showSlide(currentSlide);
+
+    });
+
+
+    // PREVIOUS
+
+    previousButton.addEventListener("click", () => {
+
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        showSlide(currentSlide);
+
+    });
+
+});
